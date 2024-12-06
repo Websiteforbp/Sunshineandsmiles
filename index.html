@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Yuji+Mai&display=swap" rel="stylesheet">
+  <style>
+    /* Custom CSS */
+    body {
+      font-family: 'Yuji Mai', sans-serif; /* Cuter, modern font */
+      background: #fffbcc; /* Pastel yellow background */
+      color: #4caf50; /* Baby green text color */
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      background-image: url('https://www.transparentpng.com/thumb/clouds/blue-sky-clouds-png-2X5uX4.png'); /* Cloud background */
+      background-repeat: repeat;
+      background-position: center;
+      background-size: 10%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: #4caf50; /* Baby green title */
+      margin-top: 50px;
+    }
+
+    p {
+      color: #4caf50; /* Baby green color for the paragraph */
+      padding: 0 20px;
+      font-size: 18px;
+    }
+
+    /* Password Screen */
+    .password-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff7e6;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .password-container input {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border: 1px solid #ffd700;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .password-container button {
+      padding: 10px 20px;
+      background-color: #ffd700;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .password-container button:hover {
+      background-color: #ffcc33;
+    }
+
+    .password-container p {
+      color: red;
+      display: none;
+    }
+
+    /* Main Content */
+    .main-content {
+      display: none;
+      font-family: 'Yuji Mai', sans-serif;
+      padding: 20px;
+      background-color: #b1e69a;
+      color: #9c27b0;
+      border-radius: 10px;
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 20px;
+    }
+
+    .nav-link {
+      background-color: #4caf50;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background-color: #b1e69a;
+    }
+
+    .content-section {
+      display: none;
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    /* Section Styles */
+    .about-page, .notes-page, .quotes-page {
+      background-color: #b1e69a;
+      color: #9c27b0;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    .content-section p {
+      color: #9c27b0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Password Screen -->
+  <div class="password-container" id="password-screen">
+    <h1>Enter Password</h1>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error-message">Incorrect password. Please try again.</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="main-content">
+    <h1>For the Brightest Star💚</h1>
+    <p>Welcome to my little corner of the internet, created just for you. A place filled with sunshine, smiles, and everything that reminds me of how amazing you are. For the one who makes every day feel like a bright, sunny morning. This website is a tribute to your light.~♡</p>
+
+    <div class="nav-links">
+      <a href="#" class="nav-link" onclick="showContent('about')">
+        <span class="emoji">🌟</span> About
+      </a>
+      <a href="#" class="nav-link" onclick="showContent('notes')">
+        <span class="emoji">💌</span> Notes
+      </a>
+      <a href="#" class="nav-link" onclick="showContent('quotes')">
+        <span class="emoji">💬</span> Quotes
+      </a>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="content-section about-page">
+      <h2>Why this site?</h2>
+      <p>This site is created as a small tribute to the one who brings light to my world🌻. It’s a reminder of how much you mean to me, with a space for all the thoughts and feelings that I cherish.</p>
+    </div>
+
+    <!-- Notes Section -->
+    <div id="notes" class="content-section notes-page">
+      <h2>Notes</h2>
+      <p>You light up my life every single day. Keep shining🌞!, and always know that you are loved♡.</p>
+      <p>You know, every time you smile, it’s like the world around me just lights up. There’s something so genuine and beautiful about it that I can’t help but be drawn to it. It’s not just the way your lips curve, but the warmth and kindness that shines through. It’s honestly one of the most beautiful things I’ve ever seen💫.</p>
+    </div>
+
+    <!-- Quotes Section -->
+    <div id="quotes" class="content-section quotes-page">
+      <h2>Quotes</h2>
+      <p>"There’s a kind of warmth that a person radiates, one that makes the world feel a little softer🤎."-</p>
+      <p>"The brightest stars are the ones who shine for others." - Unknown</p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      const correctPassword = "14082009"; // Your password
+
+      if (password === correctPassword) {
+        document.getElementById("password-screen").style.display = "none"; // Hide password screen
+        document.getElementById("main-content").style.display = "block"; // Show main content
+      } else {
+        document.getElementById("error-message").style.display = "block"; // Show error message
+      }
+    }
+
+    function showContent(section) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.classList.remove('active'));
+
+      // Show the clicked section
+      const activeSection = document.getElementById(section);
+      activeSection.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
